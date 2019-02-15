@@ -1,12 +1,12 @@
 # Desctipton
-> A Arizona Tour website for tourist from different state and country. It would be great website for who want to have a wonderful trip but do not want to research and plan out by they themselves. 
+> An Arizona tour website for tourist from different states and countries. A great website for who do not want to research and plan out by they themselves. 
 
 # User
 * Tourist from different states or countries.
 
 # Inputs and Outputs
 * Input: lists of information and local places to tour.
-* Output: complete schedule of tour, oppointment with Tourist guide。
+* Output: users will have complete schedule of the tour and oppointment with Tourist guide.
 
 # Technologies
 * ReactJS, Redux
