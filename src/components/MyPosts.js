@@ -5,28 +5,38 @@ import {
   CardText,
   CardBody,
   CardTitle,
+  Container,
   Row,
   Col
 } from 'reactstrap'
-// import { connect } from 'react-redux';
-// import {voteUp} from '../actions/posts'
-// import {voteDown} from '../actions/posts'
+import { connect } from 'react-redux';
+import MyPost from './MyPost';
+
 // import {bindActionCreators} from 'redux';
 
 class MyPosts extends Component {
   render() {
-      console.log('myposts', this.props)
+      console.log('allposts', this.props.posts)
+      console.log('user in myposts', this.props.user)
+      let myID = this.props.user.id
+      let myPosts=this.props.posts.filter(post => post.user_id.toString().includes(myID.toString()))
+      .map(post=><MyPost key={post.id} post={post} />)
+
   return (
-    <div className="m-5">
-        asdfasf
-    </div >
+    <Container>
+    <Row className="justify-content-md-center">
+        <Col xs lg="10">
+        {myPosts}
+        </Col>
+    </Row>
+</Container>
   )
 }
 }
 
 // function mapStateToProps(state, props){
 //   return {
-//     comments: state.comments.filter(comment => props.post.id == comment.post_id)
+//     posts: state.posts.filter(post => props.post.user_id == this.props.user)
 //   }
 // }
 
@@ -36,4 +46,10 @@ class MyPosts extends Component {
 // }, dispatch)
 
 // export default connect(mapStateToProps, mapDispatchToProps)(Post)
-export default MyPosts
+function mapStateToProps(state,props){
+    return{
+      posts: state.posts,
+      sortPosts: state.sortPosts
+    }
+  }
+export default connect(mapStateToProps,null)(MyPosts)

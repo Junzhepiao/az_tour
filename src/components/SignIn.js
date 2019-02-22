@@ -53,7 +53,7 @@ console.log('users',this.props.users)
                   />
               </FormGroup>
               </Col>
-              <div className="text-center"><Button type="submit" color="primary" onClick={()=> this.setState({login:!this.state.login})}>Submit</Button></div>
+              <div className="text-center"><Button type="submit" color="primary" onClick={()=> this.setState({login:!this.state.login})}>{this.state.login ? "Log Out" : "Log In"}</Button></div>
               </Form>
           </Col>
       </Row>
