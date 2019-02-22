@@ -3,9 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
+    "bootswatch": "^4.3.1",
+    "moment": "^2.24.0",
     "react": "^16.8.2",
+    "react-bootstrap": "^1.0.0-beta.5",
     "react-dom": "^16.8.2",
-    "react-scripts": "2.1.5"
+    "react-icons": "^3.4.0",
+    "react-moment": "^0.8.4",
+    "react-redux": "^6.0.1",
+    "react-responsive-carousel": "^3.1.47",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.5",
+    "reactstrap": "^7.1.0",
+    "redux": "^4.0.1",
+    "redux-form": "^8.1.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -21,5 +36,19 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "description": "> An Arizona tour guide website for tourist from different states and countries. A great website for who do not want to research and plan out by they themselves. Select places want to viste and send them to our local tour guide to schedure a trip.",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Junzhepiao/az_tour.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Junzhepiao/az_tour/issues"
+  },
+  "homepage": "https://github.com/Junzhepiao/az_tour#readme"
 }

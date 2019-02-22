@@ -1,5 +1,5 @@
 # Desctipton
-> An Arizona tour website for tourist from different states and countries. A great website for who do not want to research and plan out by they themselves. 
+> An Arizona tour guide website for tourist from different states and countries. A great website for who do not want to research and plan out by they themselves. Select places want to viste and send them to our local tour guide to schedure a trip.
 
 # User
 * Tourist from different states or countries.
@@ -15,8 +15,8 @@
 * HTML&CSS
 
 # Features
-* users login/logout
+* Users login/logout
 * display information of local hotels, activities and restaurants
 * A planner Cart to select wanted activities
 * A Submit Form - to send selected activities to a tourlist guide and make appointment
-* stretch goal - users able to post their stories after travel, people able to leave comments 
+* Users able to post their stories after travel, people able to leave comments 
