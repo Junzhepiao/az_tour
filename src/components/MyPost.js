@@ -7,7 +7,7 @@ import Moment from 'react-moment'
 import {deletePost} from '../actions/posts'
 
 class MyPost extends Component {
-    onDeleteClick =()=>{
+    onDeleteClick =(e)=>{
         this.props.deletePost(this.props.post.id)
       }
   render() {
@@ -29,7 +29,7 @@ class MyPost extends Component {
              {this.props.post.body}
             </CardText>
             <CardTitle >Votes: {this.props.post.votes}</CardTitle>
-              <Moment fromNow>Posted: {this.props.post.created_at}</Moment>
+              <div className="text-center">Posted: <Moment fromNow>{this.props.post.created_at}</Moment></div>
               {/* <hr />
               <Comment comments={this.props.comments} postId={this.props.post.id}/> */}
           </CardBody>
