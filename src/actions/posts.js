@@ -6,6 +6,9 @@ export const GET_POSTS_FAILD = 'GET_POSTS_FAILD'
 export const ADD_POST_PENDING = 'ADD_POST_PENDING'
 export const ADD_POST_SUCCESS = 'ADD_POST_SUCCESS'
 
+export const DELETE_POST_PENDING = 'DELETE_POST_PENDING'
+export const DELETE_POST_SUCCESS = 'DELETE_POST_SUCCESS'
+
 export const VOTE_UP = 'VOTE_UP'
 export const VOTE_DOWN = 'VOTE_DOWN'
 
@@ -28,13 +31,28 @@ export const addPost =(newPost) =>{
     return dispatch =>{
         axios.post('http://localhost:8000/posts', newPost)
         .then(response=> {
-            console.log('response',response)
             dispatch({
             type:ADD_POST_SUCCESS,
             payload: response.data
         })})
         .catch(err=>dispatch({
             type:ADD_POST_PENDING,
+            payload:err
+        }))
+    }
+}
+
+export const deletePost =(id) =>{
+    return dispatch =>{
+        axios.delete(`http://localhost:8000/posts/${id}`)
+        .then(response=> {
+            console.log('response',response)
+            dispatch({
+            type:DELETE_POST_SUCCESS,
+            payload: response.data
+        })})
+        .catch(err=>dispatch({
+            type:DELETE_POST_PENDING,
             payload:err
         }))
     }

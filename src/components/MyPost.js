@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import {Card, CardImg, CardText, CardBody,CardTitle,CardSubtitle,Button ,Row, Col} from 'reactstrap';
 import{connect} from 'react-redux';
-import {addToCart} from '../actions/places'
 import {bindActionCreators} from 'redux';
 import { render } from 'react-dom'
- 
+import Moment from 'react-moment'
+import {deletePost} from '../actions/posts'
+
 class MyPost extends Component {
+    onDeleteClick =()=>{
+        this.props.deletePost(this.props.post.id)
+      }
   render() {
       console.log("is it work?", this.props)
     return (
@@ -24,11 +28,12 @@ class MyPost extends Component {
           <CardText className="m-3 text-center">
              {this.props.post.body}
             </CardText>
-            {/* <CardTitle ><button onClick = {()=>this.props.voteUp(this.props.post.id)}>Up</button> {this.props.post.votes} <button disabled={this.props.post.votes == 0 ? true : false} onClick = {()=>this.props.voteDown(this.props.post.id)}>Down</button></CardTitle>
-              <Moment fromNow>{this.props.post.created_at}</Moment>|  {this.props.comments.length} {this.props.comments.length === 1 || this.props.comments.length === 0 ? "Comment" : "Comments"}
-              <hr />
+            <CardTitle >Votes: {this.props.post.votes}</CardTitle>
+              <Moment fromNow>Posted: {this.props.post.created_at}</Moment>
+              {/* <hr />
               <Comment comments={this.props.comments} postId={this.props.post.id}/> */}
           </CardBody>
+          <div className="text-center"><Button type="submit" color="primary" onClick={() => this.onDeleteClick(this.props.post.id)}>Delete post</Button></div>
         </Card>
       </Col>
     </Row>
@@ -37,4 +42,12 @@ class MyPost extends Component {
   
 }
 
-export default MyPost;
+
+function mapDispatchToProps(dispatch){
+    return {
+        deletePost: bindActionCreators(deletePost,dispatch)
+    }
+  }
+  
+  export default connect (null, mapDispatchToProps)(MyPost)
+  

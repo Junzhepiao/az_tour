@@ -11,6 +11,7 @@ import {
 } from 'reactstrap'
 import { connect } from 'react-redux';
 import MyPost from './MyPost';
+import AddPostForm from './AddPostForm';
 
 // import {bindActionCreators} from 'redux';
 
@@ -27,8 +28,10 @@ class MyPosts extends Component {
     <Row className="justify-content-md-center">
         <Col xs lg="10">
         {myPosts}
+        <AddPostForm userID={myID}/>
         </Col>
     </Row>
+
 </Container>
   )
 }

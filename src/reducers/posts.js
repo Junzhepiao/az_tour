@@ -2,7 +2,9 @@ import {GET_POSTS_SUCCESS,
     GET_POSTS_FAILD,
     ADD_POST_SUCCESS,
     ADD_POST_PENDING, 
-    VOTE_UP,VOTE_DOWN} from '../actions/posts';
+    VOTE_UP,VOTE_DOWN,
+    DELETE_POST_PENDING,
+    DELETE_POST_SUCCESS} from '../actions/posts';
 
 
 export default ( state = [], action)=>{
@@ -14,6 +16,10 @@ export default ( state = [], action)=>{
         case ADD_POST_PENDING:
             return state
         case ADD_POST_SUCCESS:
+            return [...action.payload]
+        case DELETE_POST_PENDING:
+            return state
+        case DELETE_POST_SUCCESS:
             return [...action.payload]
         case VOTE_UP:
             return state.map(post=>{
