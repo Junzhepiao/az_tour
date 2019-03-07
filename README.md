@@ -10,8 +10,8 @@
 
 # Technologies
 * ReactJS, Redux
-* JavaSctips
-* node.js
+* JavaScript
+* Node.js
 * HTML&CSS
 
 # Features
